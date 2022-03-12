@@ -20,7 +20,8 @@ body {
 }
 
 nav,
-main {
+main,
+footer {
     width: 90%;
     margin: 2rem auto;
     padding: 1rem 0;
@@ -71,10 +72,11 @@ main {
     width: 75px;
 }
 
-span.am_pm {
+
+/* span.am_pm {
     width: fit-content;
     font: 100 normal 0.85rem/1.5rem 'Sora', sans-serif;
-}
+} */
 
 .analog-ctn {
     margin: 5rem 0 3rem;
@@ -108,4 +110,49 @@ span.am_pm {
 
 .sec-hand {
     background-color: #DA3C80;
+}
+
+footer {
+    margin-top: 5rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        display: flex;
+        max-width: 68rem;
+        padding: 5rem 5rem;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: space-between;
+        box-shadow: 5px 10px 20px #050505, -5px -10px 20px #050505;
+        background: rgba(24, 27, 38, 0.45);
+    }
+    .digital-ctn,
+    .analog-ctn {
+        margin: 0;
+    }
+    .today-txt {
+        font: 100 normal 1.2rem/1.5rem 'Sora', sans-serif;
+        color: var(--fade-white);
+    }
+    .date {
+        font: 400 normal 2.5rem/1.5rem 'Sora', sans-serif;
+        margin-top: 1rem;
+    }
+    .digital-time-ctn {
+        padding: 1.2rem 2.25rem;
+        background: linear-gradient(90deg, var(--pink), var(--blue));
+    }
+    .digital-time span {
+        width: auto;
+        padding-right: 1rem;
+        display: inline-block;
+        font: 700 normal 4rem/4rem 'Sora', sans-serif;
+    }
+    .digital-time span:nth-child(3) {
+        width: 90px;
+    }
 }

@@ -23,15 +23,15 @@ function changeContent(now) {
     year.textContent = now.getFullYear();
 
     if (now.getHours() < 10) {
-        digHour.textContent = "0" + now.getHours() + " : ";
+        digHour.textContent = "0" + now.getHours() + " :";
     } else {
-        digHour.textContent = now.getHours() + " : ";
+        digHour.textContent = now.getHours() + " :";
     }
 
     if (now.getMinutes() < 10) {
-        digMin.textContent = "0" + now.getMinutes() + " : ";
+        digMin.textContent = "0" + now.getMinutes() + " :";
     } else {
-        digMin.textContent = now.getMinutes() + " : ";
+        digMin.textContent = now.getMinutes() + " :";
     }
 
     if (now.getSeconds() < 10) {
