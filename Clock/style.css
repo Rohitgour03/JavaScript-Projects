@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --very-dark: #0C0C0C;
+    --dark-grey: #181B26;
+    --fade-grey: #171B1F;
+    --pink: #DA3C80;
+    --blue: #8873DE;
+    --fade-white: #DADADA;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    font-weight: 100;
+    background-color: var(--very-dark);
+    color: #fff;
+}
+
+nav,
+main {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem 0;
+}
+
+main {
+    margin-top: 4rem;
+}
+
+.logo {
+    font: 700 normal 1.8rem / 2rem 'Sora', sans-serif;
+}
+
+.digital-ctn {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.today-txt {
+    font: 100 normal 0.85rem/1.5rem 'Sora', sans-serif;
+    color: var(--fade-white);
+}
+
+.date {
+    font: 400 normal 2rem/1.5rem 'Sora', sans-serif;
+    color: var(--fade-white);
+    margin-top: 0.25rem;
+}
+
+.digital-time-ctn {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: transparent;
+    background-color: var(--dark-grey);
+}
+
+.digital-time span {
+    width: 90px;
+    display: inline-block;
+    font: 700 normal 2.75rem/3rem 'Sora', sans-serif;
+}
+
+.digital-time span:nth-child(3) {
+    width: 75px;
+}
+
+span.am_pm {
+    width: fit-content;
+    font: 100 normal 0.85rem/1.5rem 'Sora', sans-serif;
+}
+
+.analog-ctn {
+    margin: 5rem 0 3rem;
+}
+
+.analog-clock {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    border-radius: 100%;
+    position: relative;
+    background-color: var(--fade-grey);
+    box-shadow: -5px -5px 20px var(--pink), 5px 5px 20px var(--blue), inset 10px 10px 80px var(--very-dark);
+}
+
+.hand {
+    width: 8rem;
+    height: 2px;
+    top: 50%;
+    left: 2rem;
+    position: absolute;
+    transform-origin: 100%;
+    /* transform: rotate(90deg); */
+    background: var(--fade-white);
+}
+
+.hour-hand {
+    width: 6rem;
+    left: 4rem;
+}
+
+.sec-hand {
+    background-color: #DA3C80;
+}
