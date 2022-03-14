@@ -74,6 +74,12 @@ footer {
 .increase-svg,
 .decrease-svg {
     width: 1.5rem;
+    transition: all 300ms;
+}
+
+.increase-svg:hover,
+.decrease-svg:hover {
+    background-color: var(--vary-dark);
 }
 
 .reset-btn {
@@ -82,7 +88,12 @@ footer {
     border-radius: 5px;
     color: #fff;
     padding: 0.5rem 2.5rem;
+    transition: background 300ms;
     background: var(--primary-blue);
+}
+
+.reset-btn:hover {
+    background: #4141ff;
 }
 
 footer {

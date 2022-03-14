@@ -1,0 +1,140 @@
+:root {
+    --bg-gray: #353641;
+    --dark-gray: #292C36;
+    --gray: #5a5a5e;
+    --light-gray: #9a9a9e;
+    --fade-white: #E3e3e5;
+    --blue: #5b16e6;
+    --purple: #933aed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--fade-white);
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    color: var(--gray);
+    background: var(--bg-gray);
+    font-family: 'Sora', sans-serif;
+    background-image: linear-gradient(135deg, var(--blue), var(--purple));
+}
+
+main {
+    gap: 2rem;
+    width: 80%;
+    max-width: 35rem;
+    display: flex;
+    margin: 8rem auto;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    color: var(--fade-white);
+}
+
+.card {
+    margin-top: 2rem;
+    padding: 1.75rem 2rem;
+    border-radius: 8px;
+    background: var(--dark-gray);
+    box-shadow: 5px 5px 30px #2d2d38;
+}
+
+.user-info {
+    gap: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.img-ctn {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg');
+}
+
+.user-name {
+    font-size: 1.375rem;
+    color: var(--fade-white);
+}
+
+.user-job {
+    font-size: 0.9rem;
+}
+
+.review-text {
+    margin-top: 1rem;
+    color: var(--light-gray);
+    font: 100 normal 1rem/1.5rem 'Sora', sans-serif;
+}
+
+.side-btn-ctn {
+    top: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    border-radius: 100%;
+    transition: all 300ms;
+    justify-content: center;
+    color: var(--light-gray);
+}
+
+.side-btn-ctn:hover {
+    color: var(--fade-white);
+    background-color: var(--bg-gray);
+}
+
+.left-btn {
+    left: -2.5rem;
+}
+
+.right-btn {
+    right: -2.5rem;
+}
+
+@media screen and (min-width: 500px) {
+    .left-btn {
+        left: -3.2rem;
+    }
+    .right-btn {
+        right: -3.2rem;
+    }
+}
+
+.fas {
+    width: 1rem;
+}
+
+footer {
+    font-size: 0.95rem;
+    text-align: center;
+    color: var(--fade-white);
+}
+
+.heart {
+    top: 0.5rem;
+    width: 1.5rem;
+    margin: 0 0.5rem;
+    position: relative;
+}
