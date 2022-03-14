@@ -1,0 +1,90 @@
+:root {
+    --vary-dark: #0E131D;
+    --dark-grey: #171E29;
+    --fade-white: #F7FAFB;
+    --primary-blue: #6060FF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--fade-white);
+    background: var(--vary-dark);
+    font-family: 'Poppins', sans-serif;
+}
+
+nav,
+main,
+footer {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem 0rem;
+}
+
+.logo {
+    font: 700 normal 1.5rem/2rem 'Poppins', sans-serif;
+}
+
+.card {
+    width: 350px;
+    margin: 3rem auto 2rem;
+}
+
+.count-ctn {
+    padding: 3rem 0;
+    text-align: center;
+    border-radius: 10px;
+    background: var(--primary-blue);
+    font: 500 normal 10rem/10rem 'Poppins', sans-serif;
+    box-shadow: 10px 10px 30px #090c13, -10px -10px 30px #090c13;
+}
+
+.btns-ctn,
+.change-count-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.change-count-ctn {
+    margin-left: 1rem;
+    width: 5rem;
+}
+
+.btns-ctn {
+    margin-top: 2rem;
+    padding: 0.95em 1.5rem;
+    border-radius: 8px;
+    box-shadow: 10px 10px 30px #090c13;
+    background-color: rgba(23, 30, 41, 0.75);
+}
+
+.increase-btn-ctn {
+    padding-top: 0.2rem;
+}
+
+.decrease-btn-ctn {
+    padding-bottom: 0.2rem;
+}
+
+.increase-svg,
+.decrease-svg {
+    width: 1.5rem;
+}
+
+.reset-btn {
+    border: none;
+    font: inherit;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.5rem 2.5rem;
+    background: var(--primary-blue);
+}
+
+footer {
+    text-align: center;
+}
