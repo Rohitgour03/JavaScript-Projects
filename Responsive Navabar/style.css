@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-blue);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+:root {
+    --dark-blue: #1F1D2C;
+    --light-gray: #262837;
+    --primary-blue: #6B5ECD;
+    --inter-font: 'Inter', sans-serif;
+}
+
+
+/* Navbar container */
+
+nav {
+    width: 85%;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: var(--light-gray);
+    box-shadow: 5px 5px 20px #171622, -5px -5px 20px #171622;
+}
+
+
+/* logo */
+
+#logo {
+    text-transform: uppercase;
+    font: 700 normal 1.5rem/1.8rem 'Inter', sans-serif;
+}
+
+
+/* Hamberger Menu */
+
+.menu-ctn {
+    width: 2rem;
+    height: 2rem;
+}
+
+.toggle-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background-color: inherit;
+}
+
+#menu {
+    width: 1.75rem;
+}
+
+.logo_and_menu-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Container of navigation links and signup button */
+
+.links-ctn {
+    display: none;
+    margin-top: 1.5rem;
+    transition: all 300ms;
+}
+
+
+/* show nav links on toggling */
+
+.show-links-ctn {
+    display: block;
+}
+
+
+/* Nav links */
+
+.nav-links {
+    margin-bottom: 1.5rem;
+}
+
+.nav-link-ctn {
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    transition: all 300ms;
+}
+
+.nav-link-ctn:hover {
+    background: #2E303F;
+}
+
+
+/* signup button */
+
+.signup-btn {
+    border: none;
+    border-radius: 3.5px;
+    padding: 0.5em 2em;
+    font: 500 normal 1rem/1.5rem var(--inter-font);
+    background-color: var(--primary-blue);
+    transition: background-color 300ms;
+}
+
+.signup-btn:hover {
+    background-color: #5346b6;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: var(--fade-white);
+}
+
+.heart {
+    top: 0.5rem;
+    width: 1.5rem;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        padding: 0.6rem 2rem;
+        border-radius: 5px;
+    }
+    .menu-ctn {
+        display: none;
+    }
+    nav,
+    .links-ctn,
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .links-ctn,
+    .nav-links {
+        margin: 0;
+        padding: 0;
+    }
+    .nav-links {
+        margin-right: 3rem;
+    }
+    .nav-link-ctn {
+        padding: 0.75rem 1.2rem;
+    }
+}
