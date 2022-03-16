@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-bg: #140D36;
+    --pink: #DA22FF;
+    --purple: #9733EE;
+}
+
+body {
+    color: #fff;
+    display: flex;
+    font-size: 1rem;
+    min-height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+}
+
+main,
+.modal-card {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 40rem;
+    border-radius: 10px;
+    padding: 2rem 1.75rem;
+    background-color: var(--dark-bg);
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+/* *********** hero *********** */
+
+h1.title {
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+}
+
+.text {
+    margin-bottom: 1rem;
+}
+
+.cta-btn {
+    border: none;
+    color: #fff;
+    width: 45%;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 0.75rem 0;
+    font-family: inherit;
+    transition: background 300ms;
+    background: linear-gradient(to right, var(--pink), var(--purple));
+}
+
+.cta-btn:hover {
+    background: linear-gradient(to right, #c51ce7, #8111e2);
+}
+
+
+/* ******** Modal *********** */
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    visibility: hidden;
+    position: absolute;
+    place-content: center;
+    transition: all 300ms;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.show-modal {
+    z-index: 1;
+    visibility: visible;
+}
+
+.modal-card p {
+    margin-bottom: 0;
+}
+
+.modal-card {
+    position: relative;
+}
+
+
+/* close button */
+
+.close-btn {
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    position: absolute;
+    background: inherit;
+    transition: background 300ms;
+}
+
+.close-btn:hover {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#close-svg {
+    width: 2rem;
+    height: 2rem;
+}
