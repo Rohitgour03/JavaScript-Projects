@@ -137,3 +137,13 @@ footer {
     margin: 3rem auto;
     width: 90%;
 }
+
+.attribution {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.attribution a {
+    color: inherit;
+}
