@@ -1,0 +1,272 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    background: var(--Light-grayish-cyan);
+    font-family: 'Space Mono', monospace;
+}
+
+header {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+}
+
+footer {
+    margin-bottom: 4rem;
+}
+
+.card-wrapper {
+    padding: 1.75rem 1.5rem;
+    margin: 3rem auto;
+    border-radius: 15px;
+    max-width: 375px;
+    background: var(--White);
+}
+
+h1.title {
+    line-height: 1;
+    letter-spacing: 10px;
+    color: var(--Very-dark-cyan);
+    text-align: center;
+}
+
+
+/* ********* First Ctn ************ */
+
+.first-ctn {
+    color: var(--Dark-grayish-cyan);
+}
+
+.first-ctn div {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.input-ctn {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: var(--Very-light-grayish-cyan);
+}
+
+.input-ctn svg {
+    position: absolute;
+    left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.first-ctn input.amt {
+    font: inherit;
+    font-size: 1.2rem;
+    line-height: 1;
+    direction: rtl;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit;
+    color: var(--Very-dark-cyan);
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.first-ctn input:hover,
+.first-ctn input:focus {
+    border-radius: 5px;
+    outline: 2px solid var(--Strong-cyan);
+}
+
+.percent-tip-ctn {
+    gap: 1rem;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.percent {
+    padding: 0.5em 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    border: none;
+    width: 9.5rem;
+    border-radius: 5px;
+    color: var(--White);
+    transition: color 300ms, background 300ms;
+    background: var(--Very-dark-cyan);
+}
+
+.percent:hover {
+    color: var(--Very-dark-cyan);
+    background: var(--Strong-cyan);
+}
+
+.percent:active {
+    background: var(--strong-cyan);
+}
+
+.percent-tip-ctn .custom-input-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#custom {
+    max-width: 9.5rem;
+    border: none;
+    font: inherit;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-right: 1rem;
+    border-radius: 5px;
+    background: var(--Light-grayish-cyan);
+}
+
+#custom:focus {
+    text-align: right;
+    background: var(--White);
+}
+
+.people-num-ctn {
+    position: relative;
+}
+
+#error {
+    position: absolute;
+    top: 0.25rem;
+    right: 0;
+    visibility: hidden;
+    color: red;
+    line-height: 1;
+    font: 400 normal 0.8rem/0.8rem 'Space Mono', monospace;
+}
+
+
+/* ********* second Ctn ********** */
+
+.second-ctn {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: var(--Very-dark-cyan);
+}
+
+.tip-amt-ctn,
+.total-amt-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tip-amt-ctn {
+    margin-top: 0.5rem;
+}
+
+.total-amt-ctn {
+    margin: 1rem 0 1.5rem;
+}
+
+.second-ctn .amt-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.3;
+}
+
+.second-ctn .amt-text p {
+    color: var(--White);
+}
+
+.second-ctn .amt-text span {
+    color: var(--Grayish-cyan);
+    font-size: 0.8rem;
+}
+
+.amt-num-ctn span {
+    font-size: 2rem;
+    color: var(--Strong-cyan);
+}
+
+.reset-btn {
+    width: 100%;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--Very-dark-cyan);
+    transition: background 300ms;
+    background-color: var(--Strong-cyan);
+}
+
+.reset-btn:hover {
+    background: var(--Light-grayish-cyan);
+}
+
+
+/*  ********** footer ************ */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 780px) {
+    .card-wrapper {
+        display: grid;
+        padding: 2rem 2.25rem;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        max-width: 49rem;
+        box-shadow: 5px 5px 50px var(--Grayish-cyan);
+    }
+    .first-ctn .bill-ctn,
+    .first-ctn .people-num-ctn {
+        margin: 0;
+    }
+    .first-ctn {
+        padding-block: 0.25rem;
+    }
+    .percent {
+        max-width: 6.5rem;
+    }
+    #custom {
+        max-width: 6.5rem;
+    }
+    .second-ctn {
+        padding-block: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .reset-btn-ctn {
+        margin-top: auto;
+    }
+}
