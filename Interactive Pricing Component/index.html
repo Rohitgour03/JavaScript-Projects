@@ -41,8 +41,15 @@
                 <h4 class="pageviews">100K Pageviews</h4>
 
                 <div class="slider-ctn">
-                    <img class="slider-svg" src="./images/icon-slider.svg" alt="">
-                    <input type="range" name="" id="">
+                    <input type="range" list="plans-data" name="" id="slider" min="8" max="36" value="16" step="4">
+
+                    <datalist id="plans-data">
+                        <option value="8"></option>
+                        <option value="12"></option>
+                        <option value="16"></option>
+                        <option value="24"></option>
+                        <option value="36"></option>
+                    </datalist>
                 </div>
 
                 <div class="pricing-ctn">
@@ -54,7 +61,10 @@
                     <div class="monthly-plan">
                         Monthly Billing
                     </div>
-                    <div class="toggle-btn-ctn">Togg</div>
+                    <div class="toggle-btn-ctn">
+                        <input type="checkbox" name="toggle" id="toggle">
+                        <label for="toggle"></label>
+                    </div>
                     <div class="yearly-plan">
                         Yearly Billing
                         <span class="discount">

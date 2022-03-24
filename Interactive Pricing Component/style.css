@@ -161,7 +161,7 @@ main .card {
 }
 
 .card__upperHalf {
-    padding: 2rem 1.5rem;
+    padding: 2rem;
     border-bottom: 1px solid var(--Light-Grayish-Blue);
 }
 
@@ -173,6 +173,46 @@ main .card {
 
 .card__upperHalf .slider-ctn {
     margin: 2rem auto;
+}
+
+.slider-ctn #slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+.slider-ctn #slider:focus {
+    cursor: grabbing;
+}
+
+#slider::-webkit-slider-runnable-track,
+#slider::-moz-range-track {
+    background: var(--Soft-Cyan);
+    height: 0.75rem;
+    border-radius: 50px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+#slider::-webkit-slider-thumb,
+#slider::-moz-range-thumb {
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    border-radius: 50%;
+    background: var(--Strong-Cyan);
+    background-image: url('./images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 20px 20px var(--Soft-Cyan);
+}
+
+#slider::-moz-range-thumb {
+    border: none;
 }
 
 .card__upperHalf .pricing-ctn {
@@ -197,10 +237,69 @@ main .card {
     align-items: center;
 }
 
+.billing-choice-ctn .toggle-btn-ctn {}
+
+.billing-choice-ctn .toggle-btn-ctn #toggle {
+    display: none;
+}
+
+.billing-choice-ctn .toggle-btn-ctn label {
+    width: 3rem;
+    display: flex;
+    height: 1.5rem;
+    position: relative;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--Soft-Cyan);
+}
+
+.billing-choice-ctn .toggle-btn-ctn label::before {
+    content: "";
+    position: absolute;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50px;
+    background: var(--White);
+    transition: all 300ms ease-in;
+    animation-name: switch;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes switch {
+    0% {
+        left: 3px;
+    }
+    100% {
+        left: 27px;
+    }
+}
+
+.toggle-btn-ctn #toggle:checked+label::before {
+    animation-name: reverse;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reverse {
+    0% {
+        left: 27px;
+    }
+    100% {
+        left: 3px;
+    }
+}
+
+.billing-choice-ctn .toggle-btn-ctn #toggle:checked~.billing-choice-ctn .toggle-btn-ctn label::before {
+    transform: translateX(1.55rem);
+}
+
 .yearly-plan .discount {
     position: absolute;
     font-size: 0.75rem;
     margin-left: 0.5rem;
+    font-weight: 600;
     padding: 0.25rem 0.5rem;
     color: var(--Light-Red);
     border-radius: 50px;
@@ -233,6 +332,10 @@ main .card {
     background: var(--Dark-Desaturated-Blue);
 }
 
+.trial-btn-ctn .submit-btn:hover {
+    color: var(--White);
+}
+
 
 /* ************** Footer **************  */
 
@@ -244,4 +347,62 @@ footer {
     font-size: 12px;
     color: var(--Grayish-Blue);
     text-align: center;
+}
+
+@media screen and (min-width: 780px) {
+    .card {
+        max-width: 650px;
+    }
+    header {
+        padding: 2rem;
+    }
+    header h1.title {
+        font-size: 2.5rem;
+    }
+    header .desc-txt {
+        display: inline-block;
+    }
+    .card__upperHalf {
+        display: grid;
+        justify-items: start;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "pageview price" "slider slider" "billing billing";
+    }
+    .card__upperHalf .pageviews {
+        grid-area: pageview;
+    }
+    .card__upperHalf .slider-ctn {
+        justify-self: center;
+        width: 100%;
+        margin-bottom: 3rem;
+        grid-area: slider;
+    }
+    .card__upperHalf .pricing-ctn {
+        margin: 0;
+        justify-self: self-end;
+        grid-area: price;
+    }
+    .card__upperHalf .billing-choice-ctn {
+        grid-area: billing;
+        justify-self: center;
+    }
+    .card__upperHalf .pricing-plan {
+        font-size: 3rem;
+    }
+    .card__upperHalf,
+    .card__lowerHalf {
+        padding: 2.5rem 3.5rem;
+    }
+    .card__lowerHalf {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card__lowerHalf .features-ctn {
+        text-align: left;
+    }
+    .card__lowerHalf .trial-btn-ctn {
+        margin: 0;
+    }
 }
