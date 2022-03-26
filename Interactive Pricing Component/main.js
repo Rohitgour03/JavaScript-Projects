@@ -4,9 +4,16 @@ const pricingPlans = {
     12: "50K PAGEVIEWS",
     16: "100K PAGEVIEWS",
     24: "500K PAGEVIEWS",
-    36: "1M PAGEVIEWS",
+    36: "1M PAGEVIEWS"
 };
 
+const monthlyPlans = Object.keys(pricingPlans);
+const yearlyPlans = monthlyPlans.map(plan => {
+    return plan - plan * 25 / 100;
+})
+
+console.log(monthlyPlans)
+console.log(yearlyPlans)
 
 // Crating variables
 const pageviews = document.querySelector('.pageviews')
@@ -15,52 +22,79 @@ const period = document.querySelector('.period')
 const slider = document.querySelector('#slider')
 const toggle = document.querySelector('#toggle')
 
-// Calling the handleSlider function on changing the input using the oninput event handle, which is property of globalEventHandle
 slider.oninput = handleSlider;
+window.onload = reset;
+toggle.oninput = handleSlider;
 
-// Function to handle the custom slider values
+console.log(toggle.checked)
+
 function handleSlider(e) {
-    console.log(slider.value)
-    const currentValue = parseInt(slider.value);
-    if (currentValue >= 8 && currentValue < 16) {
-        slider.step = 4;
-        updatePlans(currentValue)
-    } else if (currentValue >= 16 && currentValue < 24) {
-        slider.step = 8;
-        updatePlans(currentValue)
-    } else if (currentValue === 24) {
-        slider.step = 12;
-        updatePlans(currentValue)
-    }
-}
 
-function monthToYear(month) {
-    return (month * 12) * 25 / 100;
-}
+    const inputValue = slider.value;
+    console.log(monthlyPlans[inputValue - 1])
 
-// Function to update the plans on the page
-function updatePlans(value) {
-    console.log(pricingPlans[value]);
-    pageviews.textContent = pricingPlans[value];
+    pageviews.textContent = pricingPlans[monthlyPlans[inputValue - 1]];
 
-    if (showPeriod() === "month") {
-        console.log("$" + value.toFixed(2));
-        price.textContent = "$" + value.toFixed(2);
-        period.textContent = "/month";
-    } else if (showPeriod() === "year") {
-        const yearValue = monthToYear(value);
-        price.textContent = "$" + yearValue.toFixed(2);
-        period.textContent = "/year";
-    }
-}
-
-function showPeriod() {
-    if (!toggle.checked) {
-        return "year";
+    if (toggle.checked) {
+        const plan = parseInt(monthlyPlans[inputValue - 1]);
+        price.textContent = "$" + plan.toFixed(2);
     } else {
-        return "month";
+        const plan = yearlyPlans[inputValue - 1];
+        price.textContent = "$" + plan.toFixed(2);
     }
 }
 
-// Changing the period by toggling the toggle button
-toggle.addEventListener('change', showPeriod)
+function reset() {
+    slider.value = 3;
+    toggle.checked = true;
+    handleSlider();
+}
+
+// // Changing the period by toggling the toggle button
+// toggle.addEventListener('change', showPeriod)
+
+// function showPeriod() {
+//     if (!toggle.checked) {
+//         console.log("year")
+//         return "year";
+//     } else {
+//         console.log('month')
+//         return "month";
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function monthToYear(month) {
+//     return (month * 12) * 25 / 100;
+// }
+
+// // Function to update the plans on the page
+// function updatePlans(value) {
+//     console.log(pricingPlans[value]);
+//     pageviews.textContent = pricingPlans[value];
+
+//     if (showPeriod() === "month") {
+//         console.log("$" + value.toFixed(2));
+//         price.textContent = "$" + value.toFixed(2);
+//         period.textContent = "/month";
+//     } else if (showPeriod() === "year") {
+//         const yearValue = monthToYear(value);
+//         price.textContent = "$" + yearValue.toFixed(2);
+//         period.textContent = "/year";
+//     }
+// }
