@@ -329,6 +329,7 @@ main .card {
     padding: 0.75rem 3.5rem;
     border-radius: 50px;
     color: var(--Pale-Blue);
+    transition: color 300ms;
     background: var(--Dark-Desaturated-Blue);
 }
 
