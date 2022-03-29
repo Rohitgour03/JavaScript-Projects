@@ -107,6 +107,7 @@ select {
 }
 
 body {
+    overflow-x: hidden;
     position: relative;
     font-family: 'Kumbh Sans', sans-serif;
 }
@@ -218,11 +219,31 @@ a {
 
 .cart-ctn {
     margin-left: auto;
+    position: relative;
     margin-right: 0.5rem;
 }
 
-.cart-icon:hover .cart-icon {
+.cart-icon:hover {
+    cursor: pointer;
     color: var(--Very-dark-blue);
+}
+
+.cart-notify {
+    font-size: 0.55rem;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 0rem 0.4rem;
+    color: var(--White);
+    border-radius: 50px;
+    background: var(--Orange);
+    display: none;
+}
+
+.show-cart-notification {
+    display: block;
 }
 
 
@@ -250,6 +271,17 @@ a {
 
 .cart-content-ctn {
     padding: 1.5rem;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-cart-text {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: var(--Dark-grayish-blue);
 }
 
 .cart-content-ctn .pdt-info-ctn {
@@ -278,6 +310,7 @@ a {
 
 .cart-modal__delete-icon-ctn {
     margin-left: auto;
+    cursor: pointer;
 }
 
 .cart-modal .checkout-btn {
@@ -320,6 +353,7 @@ a {
 }
 
 .user-pf-ctn:hover {
+    cursor: pointer;
     border: 2px solid var(--Orange);
 }
 
@@ -423,7 +457,7 @@ main {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
+    transition: 0.3s ease;
     border-radius: 50px;
     user-select: none;
     display: flex;
@@ -463,7 +497,7 @@ main {
 
 .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
 }
 
 @keyframes fade {
@@ -499,13 +533,13 @@ main {
 }
 
 
-/* Delete this after adding the functionality */
+/* Active product image */
 
-.pdt-images-ctn .pdt-image-ctn:first-child {
+.pdt-images-ctn .active-img-ctn {
     outline: 3px solid var(--Orange);
 }
 
-.pdt-images-ctn .pdt-image-ctn:first-child img {
+.pdt-images-ctn .active-img-ctn img {
     opacity: 0.4;
 }
 
@@ -647,6 +681,7 @@ main {
 .pdt-quantity-ctn span.minus-icon:hover,
 .pdt-quantity-ctn span.plus-icon:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .pdt-quantity-ctn span.pdt-quantity {
@@ -673,6 +708,7 @@ main {
 
 #addToCart-btn:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 #addToCart-btn,
@@ -721,6 +757,11 @@ main {
     transform: scale(1.2);
 }
 
+.main-pdt-slideshow__modal {
+    border-radius: 15px;
+    background-color: var(--White);
+}
+
 .pdt-img__modal {
     border-radius: 15px;
 }
@@ -728,6 +769,10 @@ main {
 .pdt-images-ctn__modal {
     width: 80%;
     margin: 1.5rem auto;
+}
+
+.pdt-images-ctn__modal .pdt-image-ctn {
+    background-color: var(--White);
 }
 
 
