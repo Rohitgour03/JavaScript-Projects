@@ -375,6 +375,94 @@ main {
     margin: 0 auto;
 }
 
+
+/* Product slideshow for mobile size */
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    position: relative;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    max-width: 100%;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 50px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--White);
+}
+
+
+/* Position the "previous button" to the right */
+
+.prev {
+    left: 1rem;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 1rem;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Fading animation */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* ********* Product Information section ******** */
+
 .pdt-content-ctn {
     padding: 1.75rem;
     font-family: inherit;
