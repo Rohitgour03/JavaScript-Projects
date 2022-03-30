@@ -612,6 +612,8 @@ main {
 .pricing-ctn div:first-child,
 .pricing-ctn span.discount,
 .pdt-quantity-ctn,
+.pdt-quantity-ctn span.minus-icon,
+.pdt-quantity-ctn span.plus-icon,
 .cart-section {
     display: flex;
     align-items: center;
@@ -773,6 +775,12 @@ main {
 
 .pdt-images-ctn__modal .pdt-image-ctn {
     background-color: var(--White);
+}
+
+.active-pdt-img-ctn__modal {}
+
+.active-pdt-img__modal {
+    outline: 3px solid var(--Orange);
 }
 
 

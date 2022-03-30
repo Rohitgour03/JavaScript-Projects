@@ -80,6 +80,8 @@
     const prevBtn = document.querySelectorAll('.modal__prev');
     const nextBtn = document.querySelectorAll('.modal__next');
 
+    const modalPdtImages = document.querySelectorAll('.pdt-img-modal');
+
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -99,6 +101,23 @@
         }
 
         slides[slideIndex - 1].style.display = "block";
+
+        // console.log(slides[slideIndex - 1].children[0].dataset.item)
+
+        modalPdtImages.forEach((img) => {
+            img.classList.remove('active-pdt-img__modal')
+            img.parentElement.classList.remove('active-pdt-img-ctn__modal')
+        })
+        modalPdtImages.forEach((img) => {
+            if (img.dataset.key == slideIndex) {
+                img.classList.add('active-pdt-img__modal');
+                img.parentElement.classList.remove('active-pdt-img-ctn__modal');
+            }
+            img.addEventListener('click', (e) => {
+                const index = e.target.dataset.key;
+                showSlides(index)
+            })
+        })
 
     }
 
@@ -219,10 +238,40 @@ closePdtSlideshowModal();
 
     addToCartBtn.addEventListener('click', () => {
         showCartData(pdtCount);
+        console.log(pdtCount)
     })
 })();
 
 // Function to update the main product image
+(function changeMainProduct() {
+    const mainPdtImage = document.querySelector('.main-pdt-img')
+    const pdtImages = document.querySelectorAll('.pdt-img')
+
+    // const modalPdtImages = document.querySelectorAll('.pdt-img-modal')
+    // changePdtImg(modalPdtImages);
+
+    pdtImages.forEach((img) => {
+
+        if (img.dataset.key == 1) {
+            img.parentElement.classList.add('active-img-ctn')
+        }
+
+        img.addEventListener('click', () => {
+            const key = img.dataset.key;
+            mainPdtImage.setAttribute('src', `./images/image-product-${key}.jpg`)
+
+            pdtImages.forEach(img => {
+                img.parentElement.classList.remove('active-img-ctn')
+            })
+
+            img.parentElement.classList.add('active-img-ctn')
+        })
+    })
+
+})();
+
+
+// Function to update the main product image in modal
 (function changeMainProduct() {
     const mainPdtImage = document.querySelector('.main-pdt-img')
     const pdtImages = document.querySelectorAll('.pdt-img')
