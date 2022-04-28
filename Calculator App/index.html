@@ -26,7 +26,8 @@
                 <h1 class="title">Calc</h1>
             </header>
             <div class="display-box">
-                <input type="text" name="display" id="display">
+                <div class="previous-display">500</div>
+                <div class="current-display">1000</div>
             </div>
             <div class="btns-box">
 
@@ -61,23 +62,29 @@
                     9
                 </button>
 
-                <button class="btn plus" data-key="plus">
+                <button class="btn operation plus" data-key="+">
                     +
                 </button>
-                <button class="btn minus" data-key="minus">
+                <button class="btn operation minus" data-key="-">
                     -
                 </button>
-                <button class="btn mul" data-key="mul">
+                <button class="btn operation mul" data-key="*">
                     x
                 </button>
-                <button class="btn div" data-key="div">
+                <button class="btn operation div" data-key="/">
                     /
                 </button>
-                <button class="btn decimal" data-key="decimal">.</button>
+                <button class="btn num decimal" data-key="decimal">.</button>
 
-                <button class="btn equal" data-key="equal">=</button>
-                <button class="btn del" data-key="del">DEL</button>
-                <button class="btn reset" data-key="reset">RESET</button>
+                <button class="btn equal" data-key="=">
+                    =
+                </button>
+                <button class="btn del" data-key="del">
+                    DEL
+                </button>
+                <button class="btn reset" data-key="reset">
+                    RESET
+                </button>
             </div>
         </div>
     </main>
