@@ -12,15 +12,26 @@ const equalBtn = document.querySelector('.equal')
 
 // Declaring the useful variables
 let firstOperand, secondOperand, currentOperand = null;
-
+let allowDecimal = true;
 
 // Taking the inputs from the buttons and showing the output in the display
 numBtns.forEach(numBtn => {
     numBtn.addEventListener('click', (event) => {
+        if (numBtn.textContent === '.') {
+            if (allowDecimal) {
+                currentDisplay.textContent += event.target.innerText;
+                allowDecimal = false
+            } else {
+                currentDisplay.textContent += ""
+            }
+        } else {
+            currentDisplay.textContent += event.target.innerText;
+        }
+
         if (currentDisplay.textContent == 0) {
             currentDisplay.textContent = "";
         }
-        currentDisplay.textContent += event.target.innerText;
+
     })
 })
 
@@ -32,25 +43,27 @@ function clearDisplay() {
     firstOperand = 0
     secondOperand = 0
     currentOperand = null
+    allowDecimal = true;
 }
 resetBtn.addEventListener('click', clearDisplay);
 
 
 // Function to clear display by one character at a time
 function backspace() {
-    const currentDisplayValue = currentDisplay.textContent
-    currentDisplay.textContent = currentDisplayValue.slice(0, currentDisplayValue.length - 1)
-
     if (currentDisplay.textContent.length === 0) {
         currentDisplay.textContent = 0
         previousDisplay.textContent = ''
     }
+    const currentDisplayValue = currentDisplay.textContent
+    currentDisplay.textContent = currentDisplayValue.slice(0, currentDisplayValue.length - 1)
 }
 delBtn.addEventListener('click', backspace)
 
 
 operations.forEach(operation => {
     operation.addEventListener('click', (event) => {
+        allowDecimal = true;
+
         if (currentOperand === null) {
             firstOperand = currentDisplay.textContent
             currentOperand = operation.innerText
@@ -128,10 +141,36 @@ function operate(operation, num1, num2) {
 function calculate() {
 
     previousDisplay.textContent += currentDisplay.textContent
-    currentDisplay.textContent = operate(currentOperand, parseFloat(firstOperand), parseFloat(secondOperand));
+    let result = operate(currentOperand, parseFloat(firstOperand), parseFloat(secondOperand));
+
+    // Rounding off any decimal number upto 4 decimal places
+    if (result !== Math.floor(result)) {
+        result = result.toFixed(4)
+    }
+    currentDisplay.textContent = result
 
     firstOperand = currentDisplay.textContent
 
     currentOperand = null
     return currentDisplay.textContent;
 }
+
+
+// KeyBoard support
+
+document.addEventListener('keyup', (event) => {
+    if (event.key === '.') {
+        if (allowDecimal) {
+            currentDisplay.textContent += event.key;
+            allowDecimal = false
+        } else {
+            currentDisplay.textContent += ""
+        }
+    } else {
+        currentDisplay.textContent += event.key;
+    }
+
+    if (currentDisplay.textContent == 0) {
+        currentDisplay.textContent = "";
+    }
+})
