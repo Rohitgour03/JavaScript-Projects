@@ -60,31 +60,43 @@ function backspace() {
 delBtn.addEventListener('click', backspace)
 
 
+
 operations.forEach(operation => {
     operation.addEventListener('click', (event) => {
-        allowDecimal = true;
-
-        if (currentOperand === null) {
-            firstOperand = currentDisplay.textContent
-            currentOperand = operation.innerText
-            currentDisplay.textContent += operation.innerText
-
-        } else {
-            secondOperand = currentDisplay.textContent
-            console.log("second Operand: ", secondOperand)
-            calculate()
-            currentOperand = operation.innerText
-            currentDisplay.textContent += operation.innerText
-        }
-
-        previousDisplay.textContent = currentDisplay.textContent
-        currentDisplay.textContent = ''
-        console.log("first Operand: ", firstOperand)
-
+        console.log(event.target.innerText)
+        handleOperations(event.target.innerText)
     })
 })
 
+function handleOperations(operationValue) {
+    allowDecimal = true
+
+    if (currentOperand === null) {
+        firstOperand = currentDisplay.textContent
+        currentOperand = operationValue
+        currentDisplay.textContent += operationValue
+
+    } else {
+        secondOperand = currentDisplay.textContent
+        console.log("second Operand: ", secondOperand)
+        calculate()
+        currentOperand = operationValue
+        currentDisplay.textContent += operationValue
+    }
+
+    previousDisplay.textContent = currentDisplay.textContent
+    currentDisplay.textContent = ''
+    console.log("first Operand: ", firstOperand)
+}
+
+
+
 equalBtn.addEventListener('click', (event) => {
+    equate()
+        // previousDisplay.textContent = firstOperand
+})
+
+function equate() {
     if (currentOperand !== null) {
         secondOperand = currentDisplay.textContent;
         console.log("second Operand: ", secondOperand)
@@ -92,8 +104,8 @@ equalBtn.addEventListener('click', (event) => {
     } else {
         previousDisplay.textContent = currentDisplay.textContent
     }
-    // previousDisplay.textContent = firstOperand
-})
+}
+
 
 
 // Function to add the numbers
@@ -141,6 +153,7 @@ function operate(operation, num1, num2) {
 function calculate() {
 
     previousDisplay.textContent += currentDisplay.textContent
+
     let result = operate(currentOperand, parseFloat(firstOperand), parseFloat(secondOperand));
 
     // Rounding off any decimal number upto 4 decimal places
@@ -159,16 +172,64 @@ function calculate() {
 // KeyBoard support
 
 document.addEventListener('keyup', (event) => {
-    if (event.key === '.') {
+
+    let keyText = event.key
+
+    if (keyText.match(/\d/)) {
+        currentDisplay.textContent += keyText
+    } else if (keyText === '.') {
         if (allowDecimal) {
             currentDisplay.textContent += event.key;
             allowDecimal = false
         } else {
             currentDisplay.textContent += ""
         }
-    } else {
-        currentDisplay.textContent += event.key;
+    } else if (
+        keyText === '+' ||
+        keyText === '-' ||
+        keyText === '/') {
+        handleOperations(keyText)
+    } else if (keyText === '*') {
+        keyText = 'x'
+        handleOperations(keyText)
+    } else if (keyText === "Backspace") {
+        backspace()
+    } else if (keyText === 'Enter') {
+        equate()
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if (event.key === '.') {
+    //     if (allowDecimal) {
+    //         currentDisplay.textContent += event.key;
+    //         allowDecimal = false
+    //     } else {
+    //         currentDisplay.textContent += ""
+    //     }
+    // } else if (
+    //     event.key === '+' ||
+    //     event.key === '-' ||
+    //     event.key === '*' ||
+    //     event.key === '/') {
+    //     handleOperations(event.key)
+
+    // } else {
+    //     currentDisplay.textContent += event.key;
+    // }
 
     if (currentDisplay.textContent == 0) {
         currentDisplay.textContent = "";
