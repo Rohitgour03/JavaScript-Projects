@@ -60,7 +60,7 @@ function backspace() {
 delBtn.addEventListener('click', backspace)
 
 
-
+// listening for each click event on the operation button
 operations.forEach(operation => {
     operation.addEventListener('click', (event) => {
         console.log(event.target.innerText)
@@ -68,6 +68,7 @@ operations.forEach(operation => {
     })
 })
 
+// Function to handle the operation and assigning the values to the operands
 function handleOperations(operationValue) {
     allowDecimal = true
 
@@ -197,39 +198,6 @@ document.addEventListener('keyup', (event) => {
     } else if (keyText === 'Enter') {
         equate()
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // if (event.key === '.') {
-    //     if (allowDecimal) {
-    //         currentDisplay.textContent += event.key;
-    //         allowDecimal = false
-    //     } else {
-    //         currentDisplay.textContent += ""
-    //     }
-    // } else if (
-    //     event.key === '+' ||
-    //     event.key === '-' ||
-    //     event.key === '*' ||
-    //     event.key === '/') {
-    //     handleOperations(event.key)
-
-    // } else {
-    //     currentDisplay.textContent += event.key;
-    // }
 
     if (currentDisplay.textContent == 0) {
         currentDisplay.textContent = "";
