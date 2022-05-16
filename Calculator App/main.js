@@ -94,7 +94,6 @@ function handleOperations(operationValue) {
 
 equalBtn.addEventListener('click', (event) => {
     equate()
-        // previousDisplay.textContent = firstOperand
 })
 
 function equate() {
