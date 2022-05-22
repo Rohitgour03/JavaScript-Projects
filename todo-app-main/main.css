@@ -1,0 +1,308 @@
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* Set core body defaults */
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    /* Primary */
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    /* Neutral */
+    /* Light Theme */
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    /* Dark Theme */
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue: hsl(236, 33%, 92%);
+    /* (hover) */
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+
+/* Body */
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: var(--Dark-Grayish-Blue);
+    overflow-x: hidden;
+    background-image: url(./images/bg-mobile-light.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--Very-Light-Grayish-Blue);
+}
+
+
+/* Todo list container */
+
+.container {
+    width: 90%;
+    max-width: 30rem;
+    margin: 2.5rem auto;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* logo */
+
+#logo {
+    color: #FFF;
+    letter-spacing: 8px;
+}
+
+
+/* toggle theme button */
+
+.toggle-theme {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.toggle-theme span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ************** Form to enter new task ************  */
+
+.form-ctn {
+    background: #FFF;
+    border-radius: 5px;
+    margin: 1.25rem 0 1rem;
+}
+
+.form-ctn #form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+}
+
+
+/* Radio button */
+
+.radio-btn-ctn label {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-btn-ctn input {
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.radio-btn-ctn input[type="radio"] {
+    background: var(--Check-Background);
+}
+
+.text-input-ctn {
+    width: 100%;
+}
+
+.text-input-ctn input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+
+/* *********** Tasks container *********** */
+
+.tasks-ctn {
+    background: #FFF;
+    border-radius: 5px;
+}
+
+
+/* Each Task container */
+
+.task-ctn {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--Light-Grayish-Blue);
+    padding: 1rem 1.25rem;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.delete-btn-ctn {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+/*  */
+
+.tasks-action-ctn {
+    font-size: 0.95rem;
+    color: var(--Dark-Grayish-Blue);
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+}
+
+.tasks-action-ctn ul {
+    display: none;
+}
+
+.tasks-action-ctn span.clear {
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+/* Tasks actions list on mobile device */
+
+.tasks-action-ctn--mobile {
+    background: #FFF;
+    border-radius: 5px;
+    margin: 1.25rem 0 1rem;
+}
+
+.tasks-action-ctn--mobile ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    gap: 1.5rem;
+}
+
+.tasks-action-ctn--mobile button {
+    background: transparent;
+    padding: 0 0.5rem;
+    border: none;
+    font-weight: 600;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.tasks-action-ctn--mobile button:hover {
+    color: var(--Bright-Blue);
+}
+
+
+/* Footer */
+
+footer {
+    margin: 4rem auto;
+    text-align: center;
+}
+
+
+/* attribution */
+
+.attribution {
+    font-size: 0.8rem;
+    text-align: center;
+}
