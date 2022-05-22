@@ -53,11 +53,14 @@
             <div class="form-ctn">
                 <form action="#" id="form">
                     <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" name="Task-status" /></label>
+                        <label for="">
+                <input id="radio-input" type="radio" name="Task-status" />
+              </label>
                     </div>
                     <div class="text-input-ctn">
                         <label>
                 <input
+                  id="task-input"
                   type="text"
                   name="Task-name"
                   placeholder="Enter a new todo ..."
@@ -67,88 +70,15 @@
                 </form>
             </div>
 
-            <div class="tasks-ctn">
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">Complete online Javascript course</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">Jog around the park 3x</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">10 minutes meditation</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">Read for 1 hour</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">Pick up groceries</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="task-ctn">
-                    <div class="radio-btn-ctn">
-                        <label for=""><input type="radio" /></label>
-                    </div>
-                    <div class="task">
-                        <p class="task-text">Complete Todo app on frontend Mentor</p>
-                    </div>
-                    <div class="delete-btn-ctn">
-                        <img src="./images/icon-cross.svg" alt="task delete btn" />
-                    </div>
-                </div>
-
-                <div class="tasks-action-ctn">
-                    <span>5 items left</span>
-                    <ul>
-                        <li><button>All</button></li>
-                        <li><button>Active</button></li>
-                        <li><button>Completed</button></li>
-                    </ul>
-                    <span class="clear">Clear Completed</span>
-                </div>
+            <div class="tasks-ctn"></div>
+            <div class="tasks-action-ctn">
+                <span>5 items left</span>
+                <ul>
+                    <li><button>All</button></li>
+                    <li><button>Active</button></li>
+                    <li><button>Completed</button></li>
+                </ul>
+                <span class="clear">Clear Completed</span>
             </div>
 
             <div class="tasks-action-ctn--mobile">

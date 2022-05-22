@@ -216,7 +216,8 @@ header {
 
 /* *********** Tasks container *********** */
 
-.tasks-ctn {
+.tasks-ctn,
+.tasks-action-ctn {
     background: #FFF;
     border-radius: 5px;
 }
