@@ -92,7 +92,7 @@ select {
 :root {
     /* Primary */
     --Bright-Blue: hsl(220, 98%, 61%);
-    --Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    --Check-Background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     /* Neutral */
     /* Light Theme */
     --Very-Light-Gray: hsl(0, 0%, 98%);
@@ -184,24 +184,70 @@ header {
 }
 
 
-/* Radio button */
+/* radio button container */
+
+.radio-btn-ctn {
+    position: relative;
+}
+
+
+/* Radio input */
+
+
+/* 
+
+.radio-btn-ctn input {
+    appearance: none;
+    position: absolute;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--Light-Grayish-Blue);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+     margin: 0;
+width: 1.5rem;
+height: 1.5rem; 
+} 
+
+input[type="radio"]::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-image: var(--Check-Background);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.radio-btn-ctn input:checked .radio-btn-ctn input+label {
+    background-color: red;
+}
 
 .radio-btn-ctn label {
     display: flex;
     height: 100%;
     justify-content: center;
     align-items: center;
-}
-
-.radio-btn-ctn input {
-    margin: 0;
     width: 1.5rem;
     height: 1.5rem;
-}
+    border-radius: 50%;
+    border: 2px solid var(--Light-Grayish-Blue);
+}     
 
-.radio-btn-ctn input[type="radio"] {
-    background: var(--Check-Background);
-}
+*/
+
+
+/* Text input */
 
 .text-input-ctn {
     width: 100%;
@@ -233,6 +279,11 @@ header {
     border-bottom: 1px solid var(--Light-Grayish-Blue);
     padding: 1rem 1.25rem;
     color: var(--Very-Dark-Grayish-Blue);
+}
+
+.completed-task {
+    color: var(--Light-Grayish-Blue);
+    text-decoration: line-through;
 }
 
 .delete-btn-ctn {

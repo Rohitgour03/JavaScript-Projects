@@ -52,10 +52,9 @@
         <main>
             <div class="form-ctn">
                 <form action="#" id="form">
-                    <div class="radio-btn-ctn">
-                        <label for="">
-                <input id="radio-input" type="radio" name="Task-status" />
-              </label>
+                    <div class="checkbox-btn-ctn">
+                        <label for="checkbox-input"><input id="checkbox-input" type="checkbox" name="Task-status"
+              /></label>
                     </div>
                     <div class="text-input-ctn">
                         <label>
@@ -70,22 +69,47 @@
                 </form>
             </div>
 
-            <div class="tasks-ctn"></div>
+            <div class="tasks-ctn">
+                <!-- <div class="task-ctn" data-index="0">
+                    <div class="checkbox-btn-ctn">
+                        <label for=""><input type="checkbox" /></label>
+                    </div>
+                    <div class="task">
+                        <p class="task-text">Complete the TODO app</p>
+                    </div>
+                    <div class="delete-btn-ctn">
+                        <img src="./images/icon-cross.svg" alt="task delete btn" />
+                    </div>
+                </div> -->
+            </div>
+
             <div class="tasks-action-ctn">
-                <span>5 items left</span>
+                <span><span class="task-count">6</span> items left</span>
                 <ul>
-                    <li><button>All</button></li>
-                    <li><button>Active</button></li>
-                    <li><button>Completed</button></li>
+                    <li>
+                        <button class="all">All</button>
+                    </li>
+                    <li>
+                        <button class="active">Active</button>
+                    </li>
+                    <li>
+                        <button class="completed">Completed</button>
+                    </li>
                 </ul>
                 <span class="clear">Clear Completed</span>
             </div>
 
             <div class="tasks-action-ctn--mobile">
                 <ul>
-                    <li><button>All</button></li>
-                    <li><button>Active</button></li>
-                    <li><button>Completed</button></li>
+                    <li>
+                        <button class="all">All</button>
+                    </li>
+                    <li>
+                        <button class="active">Active</button>
+                    </li>
+                    <li>
+                        <button class="completed">Completed</button>
+                    </li>
                 </ul>
             </div>
         </main>
