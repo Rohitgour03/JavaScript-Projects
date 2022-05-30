@@ -31,6 +31,13 @@ const defaultTODOs = [{
     },
 ];
 
+// Toggle theme functionality
+const toggleBtn = document.querySelector(".toggle-theme");
+toggleBtn.addEventListener("click", (event) => {
+    const body = document.querySelector("body");
+    body.classList.toggle("dark");
+});
+
 // ************ Variables referencing the DOM elements
 const form = document.getElementById("form");
 let taskStatus = document.getElementById("radio-input");
@@ -80,8 +87,8 @@ function displayTask(task) {
 
     taskCtn.innerHTML = `
         <div class="checkbox-btn-ctn">
-            <label for="">
-                <input class="checkbox" type="checkbox" ${
+            <label for="" class="check-label">
+                <input class="checkbox" type="checkbox" name="task-status" ${
                   task.taskStatus ? "checked" : ""
                 } />
             </label>
@@ -97,9 +104,11 @@ function displayTask(task) {
     tasksCtn.appendChild(taskCtn);
     updateCount();
 
+    const taskText = taskCtn.querySelector(".task-text");
     if (task.taskStatus) {
-        // tasksCtn.children[task.taskID].children[1].children[0].classList.add('completed-task')
-        // console.log(tasksCtn.children[1]);
+        taskText.classList.add("completed-task");
+    } else {
+        taskText.classList.remove("completed-task");
     }
 }
 
@@ -107,12 +116,11 @@ function updateCount() {
     taskCount.textContent = tasks.length;
 }
 // Complete the task
-function completeTask(event, taskObj) {
+function completeTask(el) {
     const taskText =
-        event.target.parentElement.parentElement.nextElementSibling.children[0];
+        el.parentElement.parentElement.nextElementSibling.children[0];
 
-    event.target.checked = taskObj.taskStatus;
-    const check = event.target.checked;
+    const check = el.checked;
 
     if (check) {
         taskText.classList.add("completed-task");
@@ -134,6 +142,7 @@ function updateTask(el, taskId) {
     }
 
     setTask(tasks);
+    completeTask(el);
 }
 
 // Removing a task
@@ -236,7 +245,7 @@ tasksCtn.addEventListener("input", (event) => {
 
 // Listening for click event on the tasks categories
 categories.addEventListener("click", (event) => {
-    console.log(event.target);
+    filterTasks(event.target);
 });
 
 // Listening for click event on the tasks categories at mobile device
